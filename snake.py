@@ -23,6 +23,14 @@ class Snake:
         block.penup()
         block.goto(position)
         self.blocks.append(block)
+
+    def reset(self):
+        for block in self.blocks:
+            block.goto(1000,1000)
+        self.blocks.clear()
+        self.create_snake()
+        self.head = self.blocks[0]
+
     
     def extend(self):
         self.add_segment(self.blocks[-1].position())
